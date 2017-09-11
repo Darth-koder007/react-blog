@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions';
 
 class PostsIndex extends Component {
@@ -23,6 +24,11 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
+        <div>
+          <Link to="/posts/new">
+            Add a post
+          </Link>
+        </div>
         PostsIndex
         <h3>Posts</h3>
         <ul>
