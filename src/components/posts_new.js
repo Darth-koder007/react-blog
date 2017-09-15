@@ -9,16 +9,22 @@ class PostsNew extends Component {
 					type="text"
 					{...field.input}
 				/>
-				{field.meta.error}
+				{field.meta.touched ?  field.meta.error : ''}
 			</div>
 		);
 	}
 
+	onSubmit(values) {
+		console.log("values", values);
+	}
+
 	render() {
+		const { handleSubmit } = this.props;
+
 		return (
-			<form>
+			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 				<Field
-					label="Title"
+					label="Title For Post"
 					name="title"
 					component={this.renderField}
 				/>
@@ -32,6 +38,7 @@ class PostsNew extends Component {
 					name="content"
 					component={this.renderField}
 				/>
+				<button type="submit">Save</button>
 			</form>
 		);
 	}
