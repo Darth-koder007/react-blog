@@ -16,6 +16,7 @@ import PostsIndex from './components/posts_index';
 import reducers from "./reducers";
 import styles from '../style/style.scss';
 import PostsNew from './components/posts_new';
+import PostsShow from './components/posts_show';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -24,15 +25,15 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
  */
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <BrowserRouter>
+        <BrowserRouter>
       <div>
         <Switch>
           <Route path="/posts/new" component={PostsNew} />
+          <Route path="/posts/:id" component={PostsShow} />
           <Route path="/" component={PostsIndex} />
         </Switch>
       </div>
     </BrowserRouter>
-   </Provider>
-  ,
-  document.querySelector('.container')
+   </Provider>,
+    document.querySelector('.container')
   );
