@@ -62,15 +62,15 @@ function validate(values) {
 
 	// Validate the inputs from 'values'
 	if (!values.title) {
-		errors.title = "Enter a title"; 
+		errors.title = "Enter a title";
 	}
 
 	if (!values.categories) {
-		errors.categories = "Enter some categories"; 
+		errors.categories = "Enter some categories";
 	}
 
 	if (!values.content) {
-		errors.content = "Enter some content"; 
+		errors.content = "Enter some content";
 	}
 
 	// If errors is empty, its good to go
